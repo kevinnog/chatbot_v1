@@ -15,7 +15,7 @@
 
 ## 💻 Project
 
-This is Tobias 900, my first attempt at creating a chatbot.
+This is Tobias 9000, my first attempt at creating a chatbot.
 
 ## :rocket: Technologies
 
