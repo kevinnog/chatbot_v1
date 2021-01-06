@@ -3,7 +3,7 @@
 </h1>
 
 <h4 align="center"> 
-	Brain - SintegraRS-Update
+	Brain - Tobias 9000
 </h4>
 
 <p align="center">
