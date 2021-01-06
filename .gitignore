@@ -1,0 +1,15 @@
+dump
+.env
+node_modules
+venv_dir/
+virtual_env/
+captcha.png
+car.db
+car_app.sql
+app/__pycache__/
+*.pyo
+*.pyc
+*.h5
+*.pkl
+settings.json
+.vscode/
