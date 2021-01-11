@@ -3,7 +3,7 @@
 </h1>
 
 <h4 align="center"> 
-	Brain - SintegraRS-Update
+	Brain - Tobias 9000
 </h4>
 
 <p align="center">
@@ -15,7 +15,7 @@
 
 ## 💻 Project
 
-This is Tobias 900, my first attempt at creating a chatbot.
+This is Tobias 9000, my first attempt at creating a chatbot.
 
 ## :rocket: Technologies
 
