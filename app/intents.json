@@ -18,7 +18,7 @@
     {
       "tag": "age",
       "patterns": ["how old", "how old is florian", "what is your age", "how old are you", "age?"],
-      "responses": ["My owner Brain is 2 years old!", "21 years old!"]
+      "responses": ["My owner, Brain, is 2 years old!", "21 years old!"]
     },
     {
       "tag": "name",
@@ -45,7 +45,7 @@
         "what do you recommend?"
       ],
       "responses": [
-        "We have a variety of solutions for every farmer: \nFarmcheck, \nFarmerID, \nFire Alerts and many others"
+        "We have a variety of solutions: \nFarmcheck, \nFarmerID, \nFire Alerts and many others! \n\nIf you want to know more about one of them, just type its name."
       ]
     },
     {
@@ -64,11 +64,27 @@
       "responses": ["You own the following shares: ABBV, AAPL, FB, NVDA, and an ETF of teh S&P 500 Index!"]
     },
     {
+      "tag": "farmcheck",
+      "patterns": ["farmcheck", "Farm check"],
+      "responses": ["FarmCheck description"]
+    },
+    {
+      "tag": "farmerid",
+      "patterns": ["farmerid", "farmerID", "Farmer ID"],
+      "responses": ["FarmerID description"]
+    },
+    {
+      "tag": "firealerts",
+      "patterns": ["fire alerts", "fire alert"],
+      "responses": ["Fire Alerts description"]
+    },
+    {
       "tag": "insults",
-      "patterns": ["fuck you", "asshole", "eat shit", "fu", "motherfucker"],
+      "patterns": ["fuck you", "asshole", "eat shit", "fu", "motherfucker", "die"],
       "responses": [
         "That not a very nice thing to say",
         "Thats not very polite of you",
+        "Don't be like that pal",
         "SAY THAT AGAIN! I DARE YOU! I DOUBLE DARE YOU, MOTHERFUCKER!",
         "Oh, dont be so rude friend"
       ]

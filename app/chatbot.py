@@ -3,17 +3,24 @@ import json
 import pickle
 import numpy as np
 import nltk
+import PySimpleGUI as sg
 from nltk.stem import  WordNetLemmatizer
 from tensorflow.keras.models import load_model
 
+import sys
+print("PATH", sys.path)
+
+
+sg.theme('dark green 5')
+
 lemmatizer = WordNetLemmatizer()
 
-intents = json.loads(open('intents.json').read())
+intents = json.loads(open('app/intents.json').read())
 
-words = pickle.load(open('words.pkl', 'rb'))
-classes = pickle.load(open('classes.pkl', 'rb'))
+words = pickle.load(open('app/words.pkl', 'rb'))
+classes = pickle.load(open('app/classes.pkl', 'rb'))
 
-model = load_model('chatbotmodel.h5')
+model = load_model('app/chatbotmodel.h5')
 
 def clean_up_sentence(sentence):
     sentence_words = nltk.word_tokenize(sentence)
@@ -51,10 +58,33 @@ def get_response(intent_list, intents_json):
             break
     return result
 
-print('GO! Bot is running')
 
+
+# Define the window's contents
+layout = [[sg.Text("Hi friend, how can i help you?")],
+          [sg.Input(size=(100,1), key='-INPUT-')],
+          [sg.Text(size=(100,45), key='-OUTPUT-')],
+          [sg.Button('Ok'), sg.Button('Quit')]]
+
+# Create the window
+window = sg.Window('Tobias 9000', layout, location=(0,0), size=(800,600), keep_on_top=True)
+
+# Display and interact with the Window using an Event Loop
 while True:
-    message = input("")
-    ints = predict_class(message)
+    event, values = window.read()
+    # See if user wants to quit or window was closed
+    if event == sg.WINDOW_CLOSED or event == 'Quit':
+        break
+    # Output a message to the window
+    ints = predict_class(values['-INPUT-'])
     res = get_response(ints, intents)
-    print(res)
+    window['-OUTPUT-'].update(res)
+
+# Finish up by removing from the screen
+window.close()
+
+# while True:
+#     message = input("")
+#     ints = predict_class(message)
+#     res = get_response(ints, intents)
+#     print(res)
