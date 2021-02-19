@@ -15,7 +15,7 @@ jobs:
           node-version: 12
           registry-url: https://npm.pkg.github.com/
           scope: "@kevinnog"
-      - run: npm install
-      - run: npm publish
+      - run: pip install
+      - run: pip publish
         env:
           NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
